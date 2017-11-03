@@ -1,0 +1,22 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<synthetic xsi:schemaLocation="http://www.xebialabs.com/deployit/synthetic synthetic.xsd" xmlns="http://www.xebialabs.com/deployit/synthetic" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+
+    <type type="delivery.mark" extends="xlrelease.PythonScript" label="Delivery: Mark">
+        <property name="configurationUri" required="false" hidden="true" default="include/delivery/delivery-task-details.html" />
+
+        <property name="component" kind="string" required="true" category="input" description="Component that will make use of this environment."/>
+        <property name="environment" kind="string" required="true" category="input" description="Environment that will be marked."/>
+    </type>
+
+    <type type="delivery.unmark" extends="xlrelease.PythonScript" label="Delivery: Unmark">
+        <property name="configurationUri" required="false" hidden="true" default="include/delivery/delivery-task-details.html" />
+
+        <property name="component" kind="string" required="true" category="input" description="Component that will stop making use of this environment."/>
+        <property name="environment" kind="string" required="true" category="input" description="Environment that will be unmarked."/>
+    </type>
+
+</synthetic>
+
+
+
+

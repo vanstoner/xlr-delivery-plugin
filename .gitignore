@@ -1,0 +1,12 @@
+# use glob syntax.
+syntax: glob
+.DS_Store
+.gradle/
+.idea/
+build/
+node_modules/
+nohup.*
+out/
+supervisord.*
+xl-release-*-server/
+*.iml

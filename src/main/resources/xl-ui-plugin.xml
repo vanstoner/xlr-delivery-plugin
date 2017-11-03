@@ -1,0 +1,14 @@
+<plugin xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns="http://www.xebialabs.com/deployit/ui-plugin"
+        xsi:schemaLocation="http://www.xebialabs.com/deployit/ui-plugin xl-ui-plugin.xsd">
+
+    <menu-ref ref="xlrelease.menu.Main">
+        <menu id="xlrelease.menu.Delivery" label="Delivery" weight="45" uri="include/delivery/index.html">
+            <menu-item label="Conflicts" uri="include/delivery/index.html" weight="50" path-suffix="delivery"/>
+        </menu>
+    </menu-ref>
+
+    <library name="extension.delivery"/>
+
+</plugin>
+
