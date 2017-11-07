@@ -1,9 +1,7 @@
-
 from com.xebialabs.deployit.exception import NotFoundException
 
 
 class Node(object):
-
     def __init__(self, name, node_id, kind, status):
         self.name = name
         self.id = node_id
@@ -12,7 +10,6 @@ class Node(object):
 
 
 class Edge(object):
-
     def __init__(self, source_id, target_id, name, curve=0):
         self.source = source_id
         self.target = target_id
@@ -58,8 +55,9 @@ class Graph(object):
         for n in self.nodes:
             result_dict["nodes"].append({"name": n.id, "displayLabel": n.name, "kind": n.kind, "status": str(n.status)})
         for e in self.edges:
-            result_dict["edges"].append({"source": e.source, "target": e.target, "displayLabel": e.name, "curve": e.curve,
-                                  "cardinality": e.cardinality})
+            result_dict["edges"].append(
+                {"source": e.source, "target": e.target, "displayLabel": e.name, "curve": e.curve,
+                 "cardinality": e.cardinality})
         return result_dict
 
 
@@ -123,11 +121,11 @@ def read(release_id):
             return None
 
 
-rid = request.query["id"]
-rid = rid.replace("-", "/")
-result_graph = Graph()
-analyse(rid, result_graph)
+# rid = request.query["id"]
+# rid = rid.replace("-", "/")
+# result_graph = Graph()
+# analyse(rid, result_graph)
 
-response.entity = result_graph.to_dict()
-
-
+response.entity = [
+    {"environment": "env1", "component": "abc", "start": "11-06-2017", "end": "11-10-2017", "conflict": "true"},
+    {"environment": "env2", "component": "abc", "start": "11-06-2017", "end": "11-11-2017", "conflict": "false"}]

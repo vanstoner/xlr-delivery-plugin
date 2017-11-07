@@ -16,6 +16,7 @@ module.exports = {
         new CopyWebpackPlugin([
             {from: './src/main/app/index.html', target: 'web/include/delivery/index.html'},
             {from: './src/main/app/delivery-task-details.html', target: 'web/include/delivery/delivery-task-details.html'},
+            {from: './src/main/app/grid', target: 'web/include/delivery/grid'},
             {from: './src/main/app/img', to: '../../delivery/img'},
             {from: './node_modules/bootstrap/fonts', to: '../../fonts'}
         ]),
