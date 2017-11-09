@@ -1,3 +1,6 @@
+from collections import namedtuple
+from java.util.concurrent import TimeUnit
+
 class Marker(object):
     def __init__(self, environment, component, start, stop, conflict):
         self.environment = environment
@@ -33,10 +36,11 @@ class Conflicts(object):
     def date_overlap(self, marker, o_marker):
         Range = namedtuple('Range', ['start', 'end'])
         r1 = Range(start=marker.start, end=marker.stop)
-        r2 = Range(start=o_marker.start, end=o_marker.end)
+        r2 = Range(start=o_marker.start, end=o_marker.stop)
         latest_start = max(r1.start, r2.start)
         earliest_end = min(r1.end, r2.end)
-        overlap = (earliest_end - latest_start).days + 1
+        diff = earliest_end.getTime() - latest_start.getTime()
+        overlap = TimeUnit.DAYS.convert(diff, TimeUnit.MILLISECONDS) + 1
         return overlap > 0
 
     def check_overlap(self, marker):
