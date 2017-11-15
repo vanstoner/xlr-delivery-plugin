@@ -1,0 +1,1 @@
+print "Marked Environment [%s] with component [%s]" % (environment, component)

@@ -60,7 +60,9 @@ class Conflicts(object):
         result_dict = []
         for release_id, markers in self.markers.items():
             for marker in markers:
-                result_dict.append({"release": release_id, "environment": marker.environment, "component": marker.component, "start": str(marker.start), "stop": str(marker.stop), "conflict": marker.conflict})
+                release = releaseApi.getRelease(release_id)
+                release_link = release_id.replace("Applications","#/releases")
+                result_dict.append({"releaseTitle": release.title, "releaseLink": release_link, "environment": marker.environment, "component": marker.component, "start": str(marker.start), "stop": str(marker.stop), "conflict": marker.conflict})
         return result_dict
 
 
