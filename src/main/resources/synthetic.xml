@@ -15,6 +15,10 @@
         <property name="environment" kind="string" required="true" category="input" description="Environment that will be unmarked."/>
     </type>
 
+    <type type="delivery.checkForConflicts" extends="xlrelease.PythonScript" label="Delivery: Check For Conflicts">
+        <property name="conflicts" kind="boolean" category="output" description="True if conflicts are found."/>
+    </type>
+
 </synthetic>
 
 
