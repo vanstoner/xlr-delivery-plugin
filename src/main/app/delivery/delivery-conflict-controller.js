@@ -9,11 +9,16 @@ export default class deliveryConflictController {
             enableFiltering: true,
             data: 'myData',
             columnDefs: [
-                { name: 'Conflict', field: 'conflict', cellTemplate: '<div class="ui-grid-cell-contents" ng-if="row.entity.conflict"><i class="risk-critical-icon"></i></div><div class="ui-grid-cell-contents" ng-if="!row.entity.conflict"><i class="risk-ok-icon"></i></div>' },
-                { name: 'Environment', field: 'environment' },
-                { name: 'Component', field: 'component' },
                 { name: 'Release', field: 'releaseTitle', cellTemplate: '<div class="ui-grid-cell-contents"><span><a data-ng-if="row.entity.releaseTitle" data-ng-href="{{row.entity.releaseLink}}">{{ row.entity.releaseTitle }}</a></span></div>' },
-                { name: 'Start', field: 'start'},
+                { name: 'Environment', field: 'environment', cellTooltip:  
+                    function( row, col ) {
+                        if (row.entity.causers) {
+                            return 'Caused by: ' + row.entity.causers;
+                        }
+                    }},
+                { name: 'Component', field: 'component' },
+                { name: 'Conflict', field: 'conflict', cellTemplate: '<div class="ui-grid-cell-contents" ng-if="row.entity.conflict"><i class="risk-critical-icon"></i></div><div class="ui-grid-cell-contents" ng-if="!row.entity.conflict"><i class="risk-ok-icon"></i></div>'},
+                { name: 'Start', field: 'start' },
                 { name: 'Stop', field: 'stop' }
             ]
         };

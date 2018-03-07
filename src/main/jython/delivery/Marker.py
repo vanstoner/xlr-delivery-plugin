@@ -5,6 +5,7 @@ class Marker(object):
         self.start = start
         self.stop = stop
         self.conflict = conflict
+        self.causers = []
 
     def matches(self, environment, component):
         return environment == self.environment and component == self.component
