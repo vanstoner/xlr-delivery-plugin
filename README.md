@@ -44,7 +44,8 @@ The plugin offers visualization on what component will use which environment whe
 
 Plugin can be downloaded directly from the plugin's repository on [Github](https://github.com/jdewinne/xlr-delivery-plugin/releases).
 
-Place the plugin's **jar** file in the __&lt;xlr-home&gt;/plugins__ directory. 
+* `Version less than 8.0` Place the plugin's **jar** file in the __&lt;xlr-home&gt;/plugins__ directory. 
+* `8.0 and Higher` Place the plugin's **jar** file in the __&lt;xlr-home&gt;/plugins/&lowbar;&lowbar;local&lowbar;&lowbar;__ directory.
 
 ## Usage ##
 
